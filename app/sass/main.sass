@@ -1,0 +1,360 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	padding: 0
+	margin: 0
+
+*
+  box-sizing: border-box
+  &:after, &:before
+    box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #000
+	opacity: 1
+
+*:-moz-placeholder
+	color: #000
+	opacity: 1
+
+*::-moz-placeholder
+	color: #000
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #000
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+html, body
+  backface-visibility: hidden
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-family: $default-font
+	overflow-x: hidden !important
+	opacity: 1
+  cursor: default
+	
+.trans
+	transition: all .4s ease
+
+a
+	@extend .trans
+	outline: none
+	text-decoration: none
+  display: inline-block
+  font-family: $default-font
+	&:hover, &:focus, &:active
+		text-decoration: none
+		outline: none
+
+ul
+	list-style-type: none
+
+h1
+  font-size: 90px
+  font-family: $caption-font
+  text-transform: uppercase
+  color: #000
+  letter-spacing: -2px
+
+
+
+.button
+  font-size: 13px
+  font-weight: bold
+  color: #fff
+  padding: 9px
+  background-image: -moz-linear-gradient( 90deg, rgb(255,79,88) 0%, rgb(253,112,72) 100%)
+  background-image: -webkit-linear-gradient( 90deg, rgb(255,79,88) 0%, rgb(253,112,72) 100%)
+  background-image: -ms-linear-gradient( 90deg, rgb(255,79,88) 0%, rgb(253,112,72) 100%)
+  border-radius: 4px
+  vertical-align: middle
+  &:hover
+    opacity: .8
+
+// end
+
+.header
+  padding-top: 7px
+  .header-left
+    .header-logo, .header-slogan
+      display: inline-block
+      vertical-align: middle
+    .header-logo
+      color: #040404
+      font-size: 30px
+      letter-spacing: 8px
+      margin-right: 20px
+    .header-slogan
+      font-size: 13px
+      color: #000000
+      text-transform: uppercase
+      word-spacing: -1px
+      font-family: $default-font
+      padding-top: 2px
+  .header-right
+    text-align: right
+    .header-tel
+      font-size: 35px
+      font-weight: bold
+      color: #000
+      display: inline-block
+      vertical-align: middle
+      margin-right: 15px
+      &:hover
+        color: #FE614F
+
+.header-nav
+  background-color: rgba(0, 0, 0, .6)
+  width: 100%
+  height: auto
+  z-index: 5
+  position: relative
+  .header-menu
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 8px 80px 8px 106px
+    li
+      a
+        color: #fff
+        text-transform: uppercase
+        font-size: 14px
+        position: relative
+        word-spasing: -1px
+        &:after
+          content: ''
+          width: 1px
+          height: 16px
+          background-color: #CCCCCC
+          position: absolute
+          right: -64px
+          top: 50%
+          transform: translateY(-50%)
+        &:hover
+          opacity: 0.8
+      .last
+        &:after
+          display: none
+      .active
+        font-weight: bold
+
+
+.section-carousel
+  margin-top: -35px
+  position: relative
+  overflow: hidden
+  z-index: 1
+  .carousel
+    position: relative
+    .item
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+      position: relative
+      padding-bottom: 405px
+      &:after
+        content: ''
+        height: 0
+        width: 43%
+        border-top: 484px solid rgba(0,0,0, .4)
+        border-right: 120px solid transparent
+        position: absolute
+        left: 0
+        top: 0
+        margin-top: 35px
+        z-index: 2
+      .text-carousel
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          left: -10px
+          top: 63px
+          transform: rotate(19deg)
+          height: 194px
+          width: 3px
+          background-color: #fff
+          z-index: 3
+        h3
+          color: #fff
+          font-family: $default-font
+          font-weight: bold
+          text-transform: uppercase
+          font-size: 19px
+          position: relative
+          z-index: 3
+          margin-bottom: 25px
+        .carousel-button
+          border: 2px solid #FFFFFF
+          font-size: 23px
+          font-weight: bold
+          position: relative
+          z-index: 3
+          padding: 9px 15px
+          margin-bottom: 45px
+          text-transform: uppercase
+        .h1
+          background-color: rgba(255, 255, 255, .702)
+          transform: skeW(-19deg)
+          display: inline-block
+          padding: 0px 30px
+          margin-top: 70px
+          margin-left: 20px
+          margin-bottom: 10px
+          position: relative
+          z-index: 3
+          h1
+            transform: skeW(19deg)
+            text-align: center
+            line-height: 1.2
+        .h2
+          margin-left: -12px
+          margin-bottom: 30px
+          position: relative
+          z-index: 3
+          .room
+            display: inline-block
+            background-color: rgba(255, 255, 255, .702)
+            transform: skeW(-19deg)
+            padding: 10px 27px
+            vertical-align: middle
+            margin-right: 5px
+            h2
+              font-size: 36px
+              font-family: $caption-font
+              font-weight: 900
+              font-style: italic
+              transform: skeW(19deg)
+              padding: 0 30px
+              border-bottom: 3px solid #000000
+              text-align: center
+              line-height: 1.2
+          .price
+            display: inline-block
+            background-image: -moz-linear-gradient( 0deg, rgb(42,235,42) 0%, rgb(0,117,0) 100%)
+            background-image: -webkit-linear-gradient( 0deg, rgb(42,235,42) 0%, rgb(0,117,0) 100%)
+            background-image: -ms-linear-gradient( 0deg, rgb(42,235,42) 0%, rgb(0,117,0) 100%)
+            box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75)
+            transform: skeW(-19deg)
+            vertical-align: middle
+            padding: 0px 18px
+            h2
+              font-size: 16px
+              font-family: $caption-font
+              color: #fff
+              transform: skeW(19deg)
+              line-height: 1.2
+              .number
+                font-size: 45px
+                margin-left: 8px
+                margin-right: 8px
+              .unit
+                font-size: 18px
+                font-weight: 900  
+
+.owl-nav
+  width: 1170px
+  margin: 0 auto
+  position: absolute
+  bottom: 366px
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 6
+
+.owl-prev
+  position: absolute
+  left: 1%
+  &:hover
+    opacity: .8
+       
+
+.owl-next
+  position: absolute
+  left: 18%
+  &:hover
+    opacity: .8
+  
+  
+.owl-dots
+  width: 1170px
+  margin: 0 auto
+  position: absolute
+  bottom: 335px
+  left: 50%
+  transform: translateX(-44.5%)
+  .owl-dot
+    border-radius: 7px
+    background-color: transparent
+    border: 2px solid #fff
+    height: 14px
+    width: 14px
+    display: inline-block
+    margin: 0 8px
+    @extend .trans
+    span
+      transition: all 0.1s ease
+    &:hover
+      border: 2px solid #FE5B52
+      span
+        height: 6px
+        width: 6px
+        background-color: #fff
+        border-radius: 50%
+        display: block
+        margin: 2px auto
+
+    
+.owl-dot.active
+  span
+    height: 6px
+    width: 6px
+    background-color: #fff
+    border-radius: 50%
+    display: block
+    margin: 2px auto
+
+
+.advantages-section
+  background-color: rgba(255, 255, 255, .8)
+  text-align: center
+  padding-top: 20px
+  padding-bottom: 14px
+  margin-top: -280px
+  position: relative
+  z-index: 5
+  .item
+    padding: 0 7px
+    img
+      max-width: 98px
+      max-height: 98px
+      margin-bottom: 10px
+    .text
+      h4
+        font-size: 22px
+        font-family: $default-font
+        font-weight: bold
+        margin-bottom: 3px
+      p
+        font-size: 16px
+        line-height: 1.25
+
+
+
+  
+
+
+@import "media" // Всегда в конце
